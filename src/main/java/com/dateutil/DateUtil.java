@@ -1,5 +1,6 @@
 package com.dateutil;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateUtil {
@@ -10,7 +11,12 @@ public class DateUtil {
 	* 则返回的结果为2019-05-01 00:00:00
 	*/
 	public static Date getDateByInitMonth(Date src){
-		return src;
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		String string = format.format(new Date());
+	
+		String s2 = string.substring(0,7)+"-01 00:00:00";
+		System.out.println(s2);
+		return format.parse(s2);			
 	//TODO 实现代码
 	}
 	
